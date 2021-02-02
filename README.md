@@ -1,3 +1,7 @@
+# Curso-angular
+
+> Repositório destinado a aprendizagem de angular
+
 # Comandos úteis para Angular
 
 Criar novo projeto:
