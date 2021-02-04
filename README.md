@@ -11,18 +11,6 @@ Criar workspace e um projeto inicial:
 ng new <nome-do-projeto>
 ```
 
-Criar novo componente:
-
-```sh
-ng g c <nome-do-componente>
-```
-
-Criar um novo module:
-
-```sh
-ng g m <nome-do-module>.ts
-```
-
 Rodar aplicação:
 
 ```sh
@@ -40,17 +28,58 @@ Um componente é formado por três coisas:
 * Um modelo HTML que determina a UI.
 * Estilos específicos do componente que definem sua aparência
 
+Criar novo componente:
+
+```sh
+ng g c <nome-do-componente>
+```
+
+Criar novo componente dentro de um module:
+
+```sh
+ng g c <nome-do-module>/<nome-do-componente>
+```
+
+
 ### Configurando um componente para receber dados
 
-Primeiramente é necessário importar Input de @angular/core:
+Dentro da classe do componente, podemos declarar variáveis com dados
 
-```typeschipt
-import { Input } from '@angular/core';
+```typescript
+export class AlgumComponent {
+
+  variavel: string;
+
+  cursos: string[] = ['Java', 'Angular', 'Python', 'NextJS']
+
+  constructor() { 
+      this.variavel = "inicia a variavel aqui"
+  }
+
+}
 ```
 
 ## Módulos
 ---
-Um módulo é algo feito de componentes, diretivas, serviços, etc. Permite organizar coisas relacionadas
+Um módulo é algo feito de componentes, diretivas, serviços, etc. Permite organizar coisas relacionadas.
+
+Criar um novo module:
+
+```sh
+ng g m <nome-do-module>
+```
+
+## Serviço
+---
+
+Um serviço é uma categoria ampla que abrange qualquer valor, função ou recurso de que um app precisa. Um serviço é geralmente uma classe com um propósito estreito e bem definido.
+
+Criar um novo serviço:
+
+```sh
+ng g s <nome-do-serviço>
+```
+
 
 ## Comandos úteis para Typescript
 ---

@@ -25,5 +25,3 @@ class Matematica {
 
 var n1: any = 'sads';
 n1 = 4;
-
-//tsc <nome-arquivo>.tsc
