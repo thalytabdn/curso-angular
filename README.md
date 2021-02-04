@@ -80,6 +80,14 @@ Criar um novo serviço:
 ng g s <nome-do-serviço>
 ```
 
+### Property Binding
+
+Permite que valores do componente sejam utilizados no template<br>
+Utiliza-se colchetes:
+
+```html
+  <img [src]="urlImg"/>
+```
 
 ## Comandos úteis para Typescript
 ---
