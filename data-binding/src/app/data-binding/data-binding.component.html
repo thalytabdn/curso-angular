@@ -100,37 +100,4 @@
 </section>
 -->
 
-<section class="two-way-binding">
-    <article>
-        <h3>Two-way data binding</h3>
-        <div>
-            <input type="text"
-                [value] = "nome"
-                (input) = "nome = campoInput.value"
-
-                #campoInput
-            />
-
-            <input type="text"
-                [ngModel] = "nome"
-                (ngModelChange) = "nome = campoInput.value"
-
-                #campoInput
-            />
-
-            <input type="text" [(ngModel)]="nome"/>
-
-            <p>Você digitou: {{ nome }}</p>
-
-            <div>
-
-                <input type="text" [(ngModel)]="pessoa.nome"/>
-                <input type="int" [(ngModel)]="pessoa.idade"/>
-
-                <p>Meu nome é {{ pessoa.nome }} e tenho {{ pessoa.idade }} anos de idade.</p>
-
-            </div>
-
-        </div>
-    </article>
-</section>
+<app-meu-form></app-meu-form>
