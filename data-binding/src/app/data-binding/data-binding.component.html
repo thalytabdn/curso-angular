@@ -28,7 +28,7 @@
             <br>
 
             <!-- Class binding -->
-            
+
             <div class="alert " role="alert"
             [class.alert-success]="classe.value == 'alert-success'">
                 Sucesso
@@ -39,11 +39,24 @@
             </div>
             <div class="alert " role="alert"
             [class.alert-warning]="classe.value == 'alert-warning'">
-                Warning
+                Alerta
             </div>
             <div class="alert " role="alert"
             [class.alert-danger]="classe.value == 'alert-danger'">
-                Danger
+                Erro
+            </div>
+
+            <p>---------------</p>
+            <p>Outra forma de usar o class binding:</p>
+            <div class="alert {{ classe.value }}">
+                Texto colorido conforme valor do combobox
+            </div>
+
+           <p>---------------</p>
+            <p>Style binding:</p>
+            <div class="alert alert-danger" role="alert"
+                [style.display]="classe.value == 'alert-danger' ? 'block' : 'none'">
+                Este texto apenas aparece apenas em caso de erro.
             </div>
 
         </div>

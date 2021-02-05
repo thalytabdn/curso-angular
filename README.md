@@ -82,11 +82,24 @@ ng g s <nome-do-serviço>
 
 ### Property Binding
 
-Permite que valores do componente sejam utilizados no template<br>
-Utiliza-se colchetes:
+Permite que valores do componente sejam utilizados no template.
+
+Utilização:
 
 ```html
   <img [src]="urlImg"/>
+```
+```html
+  <p> {{dado/expressão}} </p>
+```
+```html
+ <select #classe (change) = "0">
+   <option value="valor">-</option>
+</select>
+
+<div class="alert {{ classe.value }}">
+    Esta div irá receber o valor atribuido a classe no select acima
+</div>
 ```
 
 ## Comandos úteis para Typescript
