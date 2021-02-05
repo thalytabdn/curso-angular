@@ -87,7 +87,7 @@ Permite que valores do componente sejam utilizados no template.
 Utilização:
 
 ```html
-  <img [src]="urlImg"/>
+  <img [propriedade]="valor"/>
 ```
 ```html
   <p> {{dado/expressão}} </p>
@@ -104,7 +104,7 @@ Utilização:
 
 ```html
   <span
-    (mouseover)="function()"         
+    (evento)="handlerS"         
   >
 ```
 
