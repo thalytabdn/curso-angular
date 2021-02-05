@@ -87,13 +87,13 @@ Permite que valores do componente sejam utilizados no template.
 Utilização:
 
 ```html
-  <img [propriedade]="valor"/>
+[propriedade]="valor"
 ```
 ```html
-  <p> {{dado/expressão}} </p>
+{{dado/expressão}}
 ```
 ```html
- <select #classe (change) = "0">
+<select #classe (change) = "0">
    <option value="valor">-</option>
 </select>
 
@@ -103,9 +103,15 @@ Utilização:
 ```
 
 ```html
-  <span
-    (evento)="handlerS"         
-  >
+  (evento)="handler"         
+```
+
+### Two-way data binding
+
+É utilizado quando queremos que o template e o componente sejam atualizados ao mesmo tempo.
+
+```html
+  [(ngModel)]="propriedade"         
 ```
 
 ## Comandos úteis para Typescript
