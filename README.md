@@ -102,6 +102,12 @@ Utilização:
 </div>
 ```
 
+```html
+  <span
+    (mouseover)="function()"         
+  >
+```
+
 ## Comandos úteis para Typescript
 ---
 

@@ -9,7 +9,12 @@ export class DataBindingComponent implements OnInit {
 
   url: string = 'http://thalytabdn.github.io';
   cursoAngular: boolean = true;
-  urlImagem = "http://lorempixel.com.br/400/300/?1"
+  urlImagem = "http://lorempixel.com.br/400/300/?1";
+
+  valorAtualInput: string = '';
+  valorSalvo: string = '';
+
+  isMouseOver: boolean = false;
 
   getValor(){
     return 1;
@@ -17,6 +22,22 @@ export class DataBindingComponent implements OnInit {
 
   getCurtirCurso(){
     return true;
+  }
+
+  botaoClicado(){
+    alert('Botão clicado!')
+  }
+
+  onKeyUp(evento: KeyboardEvent){
+    this.valorAtualInput = (<HTMLInputElement>evento.target).value;
+  }
+
+  salvarValor(valor: string){
+    this.valorSalvo = valor;
+  }
+
+  onMouseOverOut(){
+    this.isMouseOver = !this.isMouseOver;
   }
 
   constructor() { }
