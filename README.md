@@ -109,6 +109,7 @@ Utilização:
 ### Two-way data binding
 
 É utilizado quando queremos que o template e o componente sejam atualizados ao mesmo tempo.
+Permite que eventos sejam ouvidos e valores sejam atualizados de forma simultânea, entre componentes pai e filho.
 
 ```html
   [(ngModel)]="propriedade"         

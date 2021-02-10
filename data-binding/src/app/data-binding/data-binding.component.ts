@@ -9,7 +9,7 @@ export class DataBindingComponent implements OnInit {
 
   url: string = 'http://thalytabdn.github.io';
   cursoAngular: boolean = true;
-  urlImagem = "http://lorempixel.com.br/400/300/?1";
+  urlImagem = "http://lorempixel.com.br/400/300/?";
 
   valorAtualInput: string = '';
   valorSalvo: string = '';

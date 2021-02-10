@@ -9,8 +9,12 @@ export class MeuFormComponent{
   nome:any = 'abc';
 
   pessoa: any = {
-    nome: "Thalyta",
-    idade: 21
+    nome: "João",
+    idade: 18
+  }
+
+  getPessoa(){
+    return this.pessoa;
   }
   constructor() { }
 
