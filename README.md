@@ -115,6 +115,45 @@ Permite que eventos sejam ouvidos e valores sejam atualizados de forma simultân
   [(ngModel)]="propriedade"         
 ```
 
+### Input and Outputs
+
+@Input() e @Output() fornecem a um componente filho uma maneira de se comunicar com seu componente pai. @Input() permite que um componente pai atualize dados no componente filho. Por outro lado, @Output() permite que o filho envie dados a um compoennte pai.
+
+Para usar o @Input() em uma classe de componente filho, deve-se peimreiramente importar o Input e, em seguida, declarar a propriedade com @Input(), como no exemplo a seguir:
+
+```typescript
+import { Component, Input } from '@angular/core'; // First, import Input
+
+export class ItemDetailComponent {
+  @Input() item: string; // decorate the property with @Input()
+}
+```
+
+No modelo de componente filho, deve-se adicionar o seguinte:
+
+```html
+<p>
+  Today's item: {{ item }}
+</p>
+```
+
+Para configurar o componente pai, deve-se utilizar o seletor do filho como uma diretiva no modelo de componente pai.
+
+```html
+<p>
+  <app-item-detail [item]="currentItem"></app-item-detail>
+</p>
+```
+
+Por fim, na classe do componente pai, atribui-se o valor para currentItem:
+
+```typescript
+export class AppComponent {
+  currentItem = 'Television';
+}
+```
+Com o @Input, o Angular passa o valor do currentItem ao filho para que o item seja renderizado.
+
 ## Comandos úteis para Typescript
 ---
 

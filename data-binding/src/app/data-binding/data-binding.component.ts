@@ -9,12 +9,20 @@ export class DataBindingComponent implements OnInit {
 
   url: string = 'http://thalytabdn.github.io';
   cursoAngular: boolean = true;
-  urlImagem = "http://lorempixel.com.br/400/300/?";
+  urlImagem = "https://images.unsplash.com/photo-1560407560-65eb779bb6c1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80";
 
   valorAtualInput: string = '';
   valorSalvo: string = '';
 
   isMouseOver: boolean = false;
+
+  nomeDocurso: string = 'Angular';
+
+  valorInicial = 15;
+
+  onMudouValor(evento: any){
+    console.log(evento.novoValor);
+  }
 
   getValor(){
     return 1;
