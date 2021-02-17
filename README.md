@@ -119,7 +119,7 @@ Permite que eventos sejam ouvidos e valores sejam atualizados de forma simultân
 
 @Input() e @Output() fornecem a um componente filho uma maneira de se comunicar com seu componente pai. @Input() permite que um componente pai atualize dados no componente filho. Por outro lado, @Output() permite que o filho envie dados a um compoennte pai.
 
-Para usar o @Input() em uma classe de componente filho, deve-se peimreiramente importar o Input e, em seguida, declarar a propriedade com @Input(), como no exemplo a seguir:
+Para usar o @Input() em uma classe de componente filho, deve-se peimeiramente importar o Input e, em seguida, declarar a propriedade com @Input(), como no exemplo a seguir:
 
 ```typescript
 import { Component, Input } from '@angular/core'; // First, import Input
@@ -153,6 +153,50 @@ export class AppComponent {
 }
 ```
 Com o @Input, o Angular passa o valor do currentItem ao filho para que o item seja renderizado.
+   
+O @Output() em um componente filho ou diretiva permite que os dados fluam do filho para o pai.
+
+O componente filho utiliza a propriedade @Output() para gerar um evento para notificar o pai da mudança. Para adicionar um evento, um @Output() deve ter o tipo de EventEmitter, que é uma classe que permite você emitir eventos personalizados.
+
+Para usar o @Output(), deve-se configurar os componentes pai e filho:
+
+O primeiro passo é importar o Output e o EventEmitter na classe do componente filho:
+
+```typescript
+import { Output, EventEmitter } from '@angular/core';
+```
+
+Também na classe do componente, deve-se declarar a propriedade com o @Output() com o tipo EventEmmiter:
+
+```typescript
+@Output() newItemEvent = new EventEmitter<string>();
+```
+
+Cria um método para lidar com o evento, na mesma classe do componente filho, que irá ficar da seguinte forma:
+
+```typescript
+export class ItemOutputComponent {
+
+  @Output() newItemEvent = new EventEmitter<string>();
+
+  addNewItem(value: string) {
+    this.newItemEvent.emit(value);
+  }
+}
+```
+
+Para configurar o template do componente filho, coloca-se o evento vinculado ao método criado na classe do componente filho. Esse método leva como argumento o valor da propriedade.
+
+```html
+<label>Add an item: <input #newItem></label>
+<button (click)="addNewItem(newItem.value)">Add to parent's list</button>
+```
+
+Já no template do componente, vinculamos o método do pai ao evento do filho e adiciona o seletor do filho.
+
+```html
+<app-item-output (newItemEvent)="addItem($event)"></app-item-output>
+```
 
 ## Comandos úteis para Typescript
 ---
